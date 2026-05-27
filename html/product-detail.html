@@ -25,7 +25,7 @@
 
 <div class="container mt-4">
     <nav>
-        <a href="index.html" class="text-decoration-none">Trang chủ</a> / <span>Chi tiết sản phẩm</span>
+        <a href="../index.html" class="text-decoration-none">Trang chủ</a> / <span>Chi tiết sản phẩm</span>
     </nav>
 
     <hr> <div class="row mt-4">
@@ -70,11 +70,11 @@
 
     // 4. Nếu tìm thấy sản phẩm thì đổ dữ liệu ra HTML
     if (product) {
-        document.getElementById('name-detail').innerText = product.name;
-        document.getElementById('price-detail').innerText = "Giá: " + product.price;
-        document.getElementById('desc-detail').innerText = product.desc;
-        document.getElementById('img-detail').src = product.image;
-    } else {
+        document.getElementById('name-detail').innerText = product.name;
+        document.getElementById('price-detail').innerText = "Giá: " + product.price;
+        document.getElementById('desc-detail').innerText = product.desc;
+        document.getElementById('img-detail').src = "../" + product.image; 
+    } else {
         // Trường hợp ID không tồn tại hoặc không tìm thấy
         document.body.innerHTML = "<div class='container mt-5'><h3>Không tìm thấy sản phẩm này!</h3><a href='../index.html'>Quay lại trang chủ</a></div>";
     }
