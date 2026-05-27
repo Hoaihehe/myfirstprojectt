@@ -49,7 +49,12 @@
                     <button class="btn btn-outline-secondary" type="button" onclick="changeQty(1)">+</button>
                 </div>
             </div>
-            <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+            
+            <button id="add-to-cart-btn" class="btn btn-primary">Thêm vào giỏ hàng</button>
+
+<div id="success-msg" class="text-success mt-2 fw-bold" style="display: none;">
+    Thêm giỏ hàng thành công!
+</div>
         </div>
     </div>
 </div>
@@ -90,7 +95,20 @@
         
         // Gán lại giá trị mới vào ô input
         qtyInput.value = newVal;
+        
     }
+    // Hàm xử lý khi click nút "Thêm vào giỏ hàng"
+document.getElementById('add-to-cart-btn').addEventListener('click', function() {
+    const msgElement = document.getElementById('success-msg');
+    
+    // Hiển thị thông báo
+    msgElement.style.display = 'block';
+
+    // (Tùy chọn) Tự động ẩn thông báo sau 3 giây
+    setTimeout(() => {
+        msgElement.style.display = 'none';
+    }, 3000);
+});
 </script>
 
 </body>
